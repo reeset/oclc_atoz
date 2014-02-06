@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dependencies: 
+* wckbapi
+* nokogiri
+* json
 
-Things you may want to cover:
+Configuration:
+* config/initializers/a2z.rb.example -- move this to config/initializers/a2z.rb
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Update:
+* Rails.configuration.wskey -- with your OCLC key 
+* Rails.configuration.organization -- your institution name
+* Rails.configuration.items_per_page -- # of items per results string
