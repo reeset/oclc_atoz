@@ -1,16 +1,60 @@
 <hr width="100%" />
-<h2>Database List</h2>
+<h2><a href="/">Home</a> | <a href="/database/list?q=a">Database List</a> | Journal List | <a href="/ebook/list">E-Book Search</a></h2> 
 <br />
 <%
 %>
-Number found: <%= @objc.length.to_s %><br />
+<em>Number found: <%= @objR.totalResults.to_s %></em><br />
+<table width="95%" align="center">
+  <tr>
+   <td valign="top"><strong>Journal Name</strong></td>
+   <td valign="top"><strong>Provider</strong></td>
+   <td valign="top"><strong>Coverage</strong></td>
+   <td valign="top"><strong>About</strong></td>
+  </tr>
 <%
+num = 0
 @objc.each {|i|
 %>
-   <%= link_to i.title, i.uri %><br />
 <%
+  tr_style = "background-color: #ffffff;"
+  if (num.modulo 2) == 0
+    tr_style = "background-color: #dfeff0;"
+  end 
+%>
+    <tr style="<%= tr_style %>">
+       <td valign="top">
+           <%= link_to i.title, i.uri %><br />
+       </td>
+       <td valign="top">
+	   <%= i.provider_name %>
+       </td>
+       <td valign="top">
+<%
+          arr_Coverage = i.coverage.split(' ')
+	  pretty_coverage = ''
+          arr_Coverage.each{|i_c|
+              pretty_coverage = i_c.sub('@', ': ') 
+%>
+	  <%= pretty_coverage %><br />
+<%
+   	  }
+%>
+
+       </td>
+       <td valign="top">
+<%
+	if i.coverage.index('fulltext') > -1
+%>
+	  <%= image_tag "fulltext.png", size: "25x25" %>
+<%
+         end
+%>
+
+    </tr>
+<%
+  num += 1
 }
 
 %>
 
-
+</table>

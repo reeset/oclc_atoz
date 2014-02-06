@@ -1,0 +1,31 @@
+<% if @objR != nil %>
+<div class="fix" id="paginate">
+  <div style="text-align:center;">
+<% 
+  int_total = @objR.totalResults
+  int_ipp = @objR.itemsPerPage
+  int_start = @objR.startIndex
+
+  int_pages = int_total.to_i / int_ipp.to_i
+  if (int_total.to_i.modulo int_ipp.to_i) > 0
+     int_pages += 1
+  end 
+
+  index = 1 
+  while index <= int_pages
+   if index == 1
+ %>
+   <%= link_to index.to_s, controller: @mycontroller, action: 'list', q: @query, startIndex: index.to_s %> | 
+<%
+   else
+%>
+   <%= link_to index.to_s, controller: @mycontroller, action: 'list', q: @query, startIndex: (index+(10-1)).to_s %> | 
+<%
+   end
+   index += 1
+  end
+%>
+
+  </div>
+</div>
+<%end%>

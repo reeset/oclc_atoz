@@ -1,15 +1,20 @@
 <div class="fix" id="a2z">
+<% if @mycontroller != 'ebook' %>
   <div style="text-align:left;">
 <% 
   arr_letters = Array['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   arr_letters.each {|l|
 %>
-   <%= link_to l, controller: "database", action: 'list', q: l %> |
+   <%= link_to l, controller: @mycontroller, action: 'list', q: l %> |
 <%
   }
+
+  if @mycontroller == 'database'
 %>
-  <%= link_to "All", controller: "database", action: 'list' %>
+  <%= link_to "All", controller: @mycontroller, action: 'list' %>
+<%end%>
   </div>
+<%end%>
   <div style="text-align:left;"> 
     <%= form_tag("list", method: "get") do %>
     <%= label_tag(:q, "Search for:") %>

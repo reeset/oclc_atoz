@@ -9,11 +9,10 @@
 </head>
 <body class="light-theme-gray-1">
    <div id="wrapper" class="fix">
-     <%= yield :head %>`
+     <%= yield 'layouts/head' %>`
      <div id="contain" class="fix">	
         <%= yield %>
      </div>
-     <%= yield :footer %>
    </div>
 </body>
 </html>

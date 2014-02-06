@@ -1,6 +1,7 @@
 OclcAtoz::Application.routes.draw do
   get "database/list"
   get "journal/list"
+  get "ebook/list"
   root 'index#index'
   
 
