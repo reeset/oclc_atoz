@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= Rails.configuration.title%></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "a2z" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="light-theme-gray-1">
+   <div id="wrapper" class="fix">
+     <%= render "layouts/head" %>
+     <%= render "layouts/db_a2z" %>
+     <div id="contain" class="fix">	
+        <%= yield %>
+     </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<hr width="100%" />
+<h2>Database List</h2>
+<br />
+<%
+%>
+Number found: <%= @objc.length.to_s %><br />
+<%
+@objc.each {|i|
+%>
+   <%= link_to i.title, i.uri %><br />
+<%
+}
+
+%>
+
+

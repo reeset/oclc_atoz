@@ -1,0 +1,4 @@
+Rails.configuration.wskey = '[your_key_here]'
+Rails.configuration.institution_id = '[your_institution_id]'
+Rails.configuration.title = 'SandBox A-Z List'
+Rails.configuration.organization = 'OCLC University'
