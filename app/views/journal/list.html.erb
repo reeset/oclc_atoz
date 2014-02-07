@@ -43,11 +43,13 @@ num = 0
        </td>
        <td valign="top">
 <%
-	if i.coverage.index('fulltext') > -1
+       if i.coverage != nil
+	if i.coverage.index('fulltext') != nil
 %>
 	  <%= image_tag "fulltext.png", size: "25x25" %>
 <%
          end
+       end
 %>
 
     </tr>

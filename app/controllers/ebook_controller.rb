@@ -8,7 +8,11 @@ class EbookController < ApplicationController
       end 
 
       if params[:q] != nil
-         @qterm = params[:q] + "%"
+         if params[:q].index('%') == nil
+            @qterm = params[:q] + "%"
+         else
+	    @qterm = params[:q]
+	 end
          
          client = WCKBAPI::Client.new(:wskey => Rails.configuration.wskey)
          @objR, @objc = client.SearchEntries(:institution_id => Rails.configuration.institution_id, :title => @qterm, :itemsPerPage => Rails.configuration.items_per_page, :startIndex => @startIndex, :content => 'ebooks')     

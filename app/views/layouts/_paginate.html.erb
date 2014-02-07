@@ -15,11 +15,11 @@
   while index <= int_pages
    if index == 1
  %>
-   <%= link_to index.to_s, controller: @mycontroller, action: 'list', q: @query, startIndex: index.to_s %> | 
+   <%= link_to index.to_s, controller: @mycontroller, action: 'list', q: @qterm, startIndex: index.to_s %> | 
 <%
    else
 %>
-   <%= link_to index.to_s, controller: @mycontroller, action: 'list', q: @query, startIndex: (index+(10-1)).to_s %> | 
+   <%= link_to index.to_s, controller: @mycontroller, action: 'list', q: @qterm, startIndex: (((index-1)*Rails.configuration.items_per_page.to_i)+1).to_s %> | 
 <%
    end
    index += 1

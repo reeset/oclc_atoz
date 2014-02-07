@@ -8,7 +8,11 @@ class DatabaseController < ApplicationController
       end 
 
       if params[:q] != nil
-         @qterm = params[:q] + "%"
+	if params[:q].index('%') == nil
+           @qterm = params[:q] + "%"
+        else
+	   @qterm = params[:q]
+        end
       else
          @qterm = "%"
       end

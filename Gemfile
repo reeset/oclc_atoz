@@ -47,3 +47,4 @@ end
 gem 'wckbapi'
 gem 'nokogiri'
 gem 'json'
+gem 'thin'

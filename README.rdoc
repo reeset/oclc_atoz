@@ -1,9 +1,14 @@
 == README
 
+** Note **
+This process was developed using thin as a light-weight ruby server.  When moving into production, you may wish to update the Gemfile to remove the thin dependency if you are going to execute under a different environment (like passenger, mongrel, etc.)
+
+
 Dependencies: 
 * wckbapi
 * nokogiri
 * json
+* thin
 
 Configuration:
 * config/initializers/a2z.rb.example -- move this to config/initializers/a2z.rb
