@@ -49,3 +49,6 @@ gem 'wckbapi'
 gem 'nokogiri'
 gem 'json'
 gem 'thin'
+
+#gem file for heroku deployment.  Comment if not deployed with heroku
+gem 'rails_12factor', group: :production

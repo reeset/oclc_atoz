@@ -1,0 +1,5 @@
+Rails.configuration.wskey = ENV['wskey']
+Rails.configuration.institution_id = ENV['institution_id']
+Rails.configuration.title = ENV['title']
+Rails.configuration.organization = ENV['organization']
+Rails.configuration.items_per_page = ENV['items_per_page']
